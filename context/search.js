@@ -5,7 +5,7 @@ const { useContext, createContext, useState } = require("react");
 export const SearchContext = createContext();
 
 export const SearchContextProvider = ({ children }) => {
-  const [searchActive, setSearchActive] = useState(false);
+  const [searchActive, setSearchActive] = useState(true);
   return (
     <SearchContext.Provider value={{ searchActive, setSearchActive }}>
       {children}

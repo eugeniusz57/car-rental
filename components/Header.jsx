@@ -101,7 +101,7 @@ const Header = () => {
           </Link>
           <Link
             className="cursor-pointer"
-            to="testimonials"
+            to="testimonial"
             activeClass="active"
             smooth={descktopMode}
             spy={true}
