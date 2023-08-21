@@ -27,10 +27,30 @@ const DateSelection = () => {
             <FaCalendarAlt className="text-accent" />
             <div className="text-[15px] uppercase font-bold">Select Date</div>
           </div>
+          <div className="flex items-center gap-x-3 xl:ml-6">
+            <div className="text-[13px] font-mediumtext-secondary ">
+              {format(date[0].startDate, "dd/MM/yyy")}
+            </div>
+            <FaArrowRightLong className="text-accent text-[12px]" />
+            <div className="text-[13px] font-mediumtext-secondary ">
+              {date[0].endDate ? (
+                <div>{format(date[0].endDate, "dd/MM/yyy")}</div>
+              ) : (
+                <div>{format(date[0].startDate, "dd/MM/yyy")}</div>
+              )}
+            </div>
+          </div>
         </Menu.Button>
 
-        <Menu.Items className="drodown-menu shadow-lg absolute -top-56 xl:top-[90px] left-1/2 xl:left-0 z-10 transform -translate-x-1/2 xl:-translate-x-0 text-sm text-center xl:text-left w-full bg-white max-w-[332px] py-6 rounded-[10px]">
-          menu items
+        <Menu.Items className="drodown-menu shadow-lg absolute -top-96 xl:top-[90px] left-1/2 xl:left-0 z-10 transform -translate-x-1/2 xl:-translate-x-0 rounded-[10px] overflow-hidden">
+          <DateRange
+            onChange={(item) => setDate([item.selection])}
+            editableDateInputs={true}
+            moveRangeOnFirstSelection={false}
+            ranges={date}
+            rangeColors={["#ed1d24"]}
+            minDate={addDays(new Date(), 0)}
+          />
         </Menu.Items>
       </div>
     </Menu>
