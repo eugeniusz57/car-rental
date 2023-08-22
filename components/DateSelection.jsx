@@ -32,7 +32,7 @@ const DateSelection = () => {
               {format(date[0].startDate, "dd/MM/yyy")}
             </div>
             <FaArrowRightLong className="text-accent text-[12px]" />
-            <div className="text-[13px] font-mediumtext-secondary ">
+            <div className="text-[13px] font-medium text-secondary ">
               {date[0].endDate ? (
                 <div>{format(date[0].endDate, "dd/MM/yyy")}</div>
               ) : (
