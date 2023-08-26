@@ -4,6 +4,7 @@ import "swiper/css";
 
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Image from "next/image";
 
 const carsArray = [
   {
@@ -135,7 +136,48 @@ const CarSlider = () => {
         }}
       >
         {carsArray.map((car, index) => {
-          return <SwiperSlide key={index}>slide</SwiperSlide>;
+          return (
+            <SwiperSlide key={index}>
+              <div className="max-w-[385px] mx-auto sm:mx-0 bg-gray-100">
+                <Image
+                  src={car.image}
+                  width={380}
+                  height={284}
+                  alt={car.name}
+                />
+                <div className="flex justify-between">
+                  <div>
+                    <div className="text-[13px] text-secondary uppercase">
+                      {car.type}
+                    </div>
+                    <h3 className="text-lg uppercase font-bold">{car.name}</h3>
+                    <div className="mb-10 text-accent font-semibold uppercase">
+                      {car.price}/day
+                    </div>
+                  </div>
+                  <div>stars</div>
+                </div>
+                <div className="flex gap-x-3 xl:gap-x-4 w-max mb-10">
+                  {car.info.map((item, index) => {
+                    return (
+                      <div className="flex flex-col items-center" key={index}>
+                        <div className="bg-primary w-12 h-12 rounded-full flex justify-center items-center">
+                          <Image
+                            src={item.icon}
+                            width={24}
+                            height={24}
+                            alt={item.text}
+                          />
+                        </div>
+                        <div>{item.text}</div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <button className="btn btn-accent btn-lg">See details</button>
+              </div>
+            </SwiperSlide>
+          );
         })}
       </Swiper>
     </div>
