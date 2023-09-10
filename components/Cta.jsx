@@ -8,7 +8,7 @@ const Cta = () => {
       className="pt-24 xl:pt-48 flex items-end pb-0 bg-[#b2b7c2]/10 overflow-hidden"
       id="contact"
     >
-      <div className="container mx">
+      <div className="container mx-auto">
         <div className="flex flex-col md:flex-row xl:items-center">
           <div className="flex-1 xl:ml-24 text-center md:text-left mb-12 md:mb-0">
             <div className="max-w-[520px] mx-auto order-2 xl:order-none">
